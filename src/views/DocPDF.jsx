@@ -8,7 +8,7 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: "15px",
+    paddingHorizontal: "15px",
     fontSize: "12px",
   },
 
@@ -97,6 +97,7 @@ const DocPDF = ({ poema }) => {
   return (
     <Document>
       <Page size={"A4"}>
+        <View style={{ padding: "10px" }} fixed></View>
         <View style={styles.container}>
           {/* Imagen Veterinaria */}
           <Image
@@ -245,6 +246,119 @@ const DocPDF = ({ poema }) => {
               <Text style={styles.containerDataCell}>Peluca</Text>
             </View>
           </View>
+
+          {/* Contenedor de la tabla TIPO 1 */}
+          <View style={styles.tableContainer}>
+            {/* Encabezado de la tabla */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellNoBorder}></Text>
+              <Text style={styles.tableCellNoBorder}>Resultado</Text>
+              <Text style={styles.tableCell}></Text>
+              <Text style={styles.tableCellNoBorder}>
+                Valores de referencia
+              </Text>
+            </View>
+            {/* Contenido de la tabla */}
+            {/* Fila 1 */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellTextStart}>Mielocitos</Text>
+              <Text style={styles.tableCellTextStart}>34</Text>
+              <Text style={styles.tableCellTextStart}>Fila 1, Celda 3</Text>
+              <Text style={styles.tableCellNoBorder}>Fila 1, Celda 4</Text>
+            </View>
+            {/* Fila 2 */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellTextStart}>Fila 2, Celda 1</Text>
+              <Text style={styles.tableCellTextStart}>Fila 2, Celda 2</Text>
+              <Text style={styles.tableCellTextStart}>Fila 2, Celda 3</Text>
+              <Text style={styles.tableCellNoBorder}>Fila 2, Celda 4</Text>
+            </View>
+          </View>
+
+          {/* Contenedor de la tabla TIPO 2 */}
+          <View style={styles.tableContainer}>
+            {/* Encabezado de la tabla */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellNoBorderTitle}>Hemograma</Text>
+            </View>
+            {/* Subencabezado de la tabla */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellNoBorder}></Text>
+              <Text style={styles.tableCellNoBorder}>Resultado</Text>
+              <Text style={styles.tableCell}></Text>
+              <Text style={styles.tableCellNoBorder}>
+                Valores de referencia
+              </Text>
+            </View>
+            {/* Contenido de la tabla */}
+            {/* Fila 1 */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellTextStart}>Material</Text>
+              <Text style={styles.tableCellTextStart}>Caca</Text>
+              <Text style={styles.tableCellTextStart}>Fila 1, Celda 3</Text>
+              <Text style={styles.tableCellNoBorder}>50-60</Text>
+            </View>
+            {/* Fila 2 */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellTextStart}>
+                Hemoglobina corpuscular medio
+              </Text>
+              <Text style={styles.tableCellTextStart}>800000000</Text>
+              <Text style={styles.tableCellTextStart}>%</Text>
+              <Text style={styles.tableCellNoBorder}>60-7000</Text>
+            </View>
+          </View>
+
+          {/* OBSERVACIONES - Contenedor de la tabla */}
+          <View style={styles.tableContainer}>
+            {/* Encabezado de la tabla */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellNoBorderTitle}>Observaciones</Text>
+            </View>
+
+            {/* Contenido de la tabla */}
+            {/* Fila 1 */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellTextStart1W}>Hematología</Text>
+              <Text style={styles.containerDataCell}>
+                Neutrófilos hipersegmentados. Anisoplaquetosis. Recuento
+                plaquetario controlado en frotis sanguíneo
+              </Text>
+            </View>
+            {/* Fila 2 */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellTextStart1W}>Química Sanguínea</Text>
+              <Text style={styles.containerDataCell}>
+                valor 1 valores entre : mas o menos 15
+              </Text>
+            </View>
+          </View>
+
+          {/* SERVICIOS ADICIONALES - Contenedor de la tabla */}
+          <View style={styles.tableContainer}>
+            {/* Encabezado de la tabla */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellNoBorderTitle}>
+                Servicios Adicionales
+              </Text>
+            </View>
+
+            {/* Contenido de la tabla */}
+            {/* Fila 1 */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellTextStart1W}>2023-11-03</Text>
+              <Text style={styles.containerDataCell}>Limpieza Profunda</Text>
+            </View>
+            {/* Fila 2 */}
+            <View style={styles.tableRow}>
+              <Text style={styles.tableCellTextStart1W}>2023-11-06</Text>
+              <Text style={styles.containerDataCell}>Peluca</Text>
+            </View>
+          </View>
+        </View>
+        <View style={{ padding: "15px" }} fixed></View>
+        <View style={styles.container}>
+          <Text>Espacio del Footer</Text>
         </View>
       </Page>
     </Document>
